@@ -8,8 +8,8 @@
     "heroku-postbuild": "echo Skip builds on Heroku"
   },
   "dependencies": {
-    "cors": "2.8.1",
-    "express": "4.13.3"
+    "cors": "^2.8.5",
+    "express": "^4.13.3"
   },
   "engines": {
     "node": "5.6.0"
