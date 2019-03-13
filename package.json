@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "heroku-postbuild": "echo Skip builds on Heroku"
+    "build": "node index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
