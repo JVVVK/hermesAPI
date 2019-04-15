@@ -1,6 +1,6 @@
 var express =  require('express');
 var cors = require('cors');
-var fs = require("fs");
+//var fs = require("fs");
 
 const app = express();
 app.use(cors());
@@ -28,7 +28,7 @@ app.listen(app.get('port'), function() {
 });
 
 
-var numDP = 10000;     // Vietoviu skaicius (demand points, max 10000)
+/*var numDP = 10000;     // Vietoviu skaicius (demand points, max 10000)
 var numPF = 10;        // Esanciu objektu skaicius (preexisting facilities)
 var numCL = 25;        // Kandidatu naujiems objektams skaicius (candidate locations)
 var numX  = 5;         // Nauju objektu skaicius
@@ -44,4 +44,4 @@ function loadDemandPoints() {
         return line.split(" ");
     });
     console.log(demandPoints);
-}
+} */
