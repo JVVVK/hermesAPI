@@ -32,7 +32,7 @@ app.get('/users', function(req, res) {
   ]);
 });
 
-app.post('/data', function(req, res){
+app.get('/data', function(req, res){
   exec(runAddon(), function (err, stdout, stderr) {
     if (!err) {
       console.log(stdout);
