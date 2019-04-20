@@ -32,7 +32,6 @@ app.get('/data', function(req, res){
       res.json({'results': stdout})
     }
   });
-  res.send({ sprendinys });
 })
 
 app.listen(app.get('port'), function() {
