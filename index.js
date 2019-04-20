@@ -35,8 +35,8 @@ app.get('/users', function(req, res) {
 app.post('/data', function(req, res){
   exec(runAddon(), function (err, stdout, stderr) {
     if (!err) {
-      res.json({'results': stdout})
       console.log(stdout);
+      res.json({'results': stdout})
     }
   });
 })
