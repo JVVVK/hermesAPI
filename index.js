@@ -28,9 +28,10 @@ app.get('/users', function(req, res) {
 app.get('/data', function(req, res){
   exec(runAddon(), function (err, stdout, stderr) {
     if (!err) {
-      console.log(stdout)
+      res.send(stdout)
     }
   });
+  //res.sendStatus(200);
 })
 
 app.listen(app.get('port'), function() {
