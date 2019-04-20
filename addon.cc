@@ -69,7 +69,7 @@ void flpenum(const FunctionCallbackInfo<Value>& args) {
       cout << bestX[i] << " (" << demandPoints[bestX[i]][0] << " " << demandPoints[bestX[i]][1] << ")" << endl; 
    }
 	cout << "Potencialiu klientu skaicius: " << bestU << endl;
-	cout << "Skaiciavimo trukme: " << tf-ts << " sek.";
+	cout << "Skaiciavimo trukme: " << tf-ts << " sek." << endl;
 }
 
 //=============================================================================

@@ -31,7 +31,7 @@ app.get('/data', function(req, res){
       console.log(stdout)
     }
   });
-  res.sendStatus(200);
+  res.send(stdout);
 })
 
 app.listen(app.get('port'), function() {
