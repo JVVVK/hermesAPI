@@ -26,13 +26,11 @@ app.get('/users', function(req, res) {
 });
 
 app.get('/data', function(req, res,){
-  
-  var response = await exec(runAddon(), function (err, stdout, stderr) {
+  await exec(runAddon(), function (err, stdout, stderr) {
     if (!err) {
-      res.send(response)
+      res.send(stdout)
     }
   });
-  //res.sendStatus(200);
 })
 
 app.listen(app.get('port'), function() {
