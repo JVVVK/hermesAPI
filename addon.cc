@@ -27,10 +27,12 @@ int increaseX(int *X, int index, int maxindex, int num);
 
 void flpenum(const FunctionCallbackInfo<Value>& args) {
 
-   int numDP = 100;      // Vietoviu skaicius (demand points, max 10000)
-   int numPF = 10;       // Esanciu objektu skaicius (preexisting facilities)
-   int numCL = 25;       // Kandidatu naujiems objektams skaicius (candidate locations)
-   int numX  = 5;        // Nauju objektu skaicius
+   Isolate* isolate = args.GetIsolate();
+
+   int numDP = args[0]->IntegerValue();    // Vietoviu skaicius (demand points, max 10000)
+   int numPF = args[1]->IntegerValue();     // Esanciu objektu skaicius (preexisting facilities)
+   int numCL = args[2]->IntegerValue();     // Kandidatu naujiems objektams skaicius (candidate locations)
+   int numX  = args[3]->IntegerValue();     // Nauju objektu skaicius
 
    double ts = getTime();          // Algoritmo vykdymo pradzios laikas
 

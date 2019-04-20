@@ -25,3 +25,9 @@ app.get('/users', function(req, res) {
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port')); 
 });
+
+const addon = require('./build/Release/addon');
+
+const runAddon = () => addon.flpenum(100, 10, 25, 5);
+
+runAddon();
