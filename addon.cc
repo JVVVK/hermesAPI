@@ -64,9 +64,11 @@ void flpenum(const FunctionCallbackInfo<Value>& args) {
 	
 	double tf = getTime();     // Skaiciavimu pabaigos laikas
 
-	cout << "Geriausias sprendinys: ";
-	for (int i=0; i<numX; i++) cout << bestX[i] << " ";
-	cout << "(" << bestU << ")" << endl;
+	cout << "Geriausias sprendinys:" << endl;
+	for (int i=0; i<numX; i++) {
+      cout << bestX[i] << " (" << demandPoints[bestX[i]][0] << " " << demandPoints[bestX[i]][1] << ")" << endl; 
+   }
+	cout << "Potencialiu klientu skaicius: " << bestU << endl;
 	cout << "Skaiciavimo trukme: " << tf-ts << " sek.";
 }
 

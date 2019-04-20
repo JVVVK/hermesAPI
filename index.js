@@ -1,5 +1,6 @@
 var express =  require('express');
 var cors = require('cors');
+var exec = require("child_process").exec;
 
 const app = express();
 app.use(cors());
@@ -31,3 +32,11 @@ const addon = require('./build/Release/addon');
 const runAddon = () => addon.flpenum(100, 10, 25, 5);
 
 runAddon();
+
+app.post('/data', function(req, res){
+  exec(runAddon(), function (err, stdout, stderr) {
+    if (!err) {
+      console.log(stdout)
+    }
+  });
+})
