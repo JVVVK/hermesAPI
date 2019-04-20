@@ -2,6 +2,7 @@ var express =  require('express');
 var cors = require('cors');
 const addon = require('./build/Release/addon');
 var exec = require("child_process").exec;
+var sprendinys = '';
 
 const app = express();
 const runAddon = () => addon.flpenum(100, 10, 25, 5);
@@ -28,11 +29,12 @@ app.get('/users', function(req, res) {
 app.get('/data', function(req, res){
   exec(runAddon(), function (err, stdout, stderr) {
     if (!err) {
+      sprendinys = stdout;
       console.log(stdout);
     }
   });
   res.type('text/plain');
-  res.send(stdout);
+  res.send(sprendinys);
 })
 
 app.listen(app.get('port'), function() {
