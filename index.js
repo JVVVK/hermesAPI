@@ -25,10 +25,11 @@ app.get('/users', function(req, res) {
   ]);
 });
 
-app.get('/data', function(req, res){
-  exec(runAddon(), function (err, stdout, stderr) {
+app.get('/data', function(req, res,){
+  
+  var response = await exec(runAddon(), function (err, stdout, stderr) {
     if (!err) {
-      res.send(stdout)
+      res.send(response)
     }
   });
   //res.sendStatus(200);
