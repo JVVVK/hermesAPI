@@ -36,9 +36,9 @@ app.get('/data', function(req, res){
   exec(runAddon(), function (err, stdout, stderr) {
     if (!err) {
       console.log(stdout);
-      res.json({'results': stdout})
     }
   });
+  res.json({'results': stdout})
 })
 
 app.listen(app.get('port'), function() {
