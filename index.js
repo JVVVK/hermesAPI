@@ -1,8 +1,10 @@
 var express =  require('express');
 var cors = require('cors');
+const addon = require('./build/Release/addon');
 var exec = require("child_process").exec;
 
 const app = express();
+const runAddon = () => addon.flpenum(100, 10, 25, 5);
 app.use(cors());
 
 app.set('port', (process.env.PORT || 5000));
@@ -23,20 +25,14 @@ app.get('/users', function(req, res) {
   ]);
 });
 
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port')); 
-});
-
-const addon = require('./build/Release/addon');
-
-const runAddon = () => addon.flpenum(100, 10, 25, 5);
-
-runAddon();
-
-app.post('/data', function(req, res){
+app.get('/data', function(req, res){
   exec(runAddon(), function (err, stdout, stderr) {
     if (!err) {
       console.log(stdout)
     }
   });
 })
+
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port')); 
+});
