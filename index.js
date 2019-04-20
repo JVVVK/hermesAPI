@@ -41,7 +41,7 @@ app.all('/data', function(req, res){
       sprendinys = stdout;
     }
   });
-  res.json({'results': sprendinys})
+  res.json([{'results': sprendinys}])
 })
 
 app.listen(app.get('port'), function() {
