@@ -10,6 +10,8 @@ var exec = require("child_process").exec;
 const app = express();
 const runAddon = () => addon.flpenum(100, 10, 25, 5);
 
+var sprendinys;
+
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -32,13 +34,14 @@ app.get('/users', function(req, res) {
   ]);
 });
 
-app.get('/data', function(req, res){
+app.all('/data', function(req, res){
   exec(runAddon(), function (err, stdout, stderr) {
     if (!err) {
       console.log(stdout);
+      sprendinys = stdout;
     }
   });
-  res.json({'results': stdout})
+  res.json({'results': sprendinys})
 })
 
 app.listen(app.get('port'), function() {
