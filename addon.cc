@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+#include <sstream>
+#include <string>
 
 using namespace v8;
 using namespace std;
@@ -64,12 +66,28 @@ void flpenum(const FunctionCallbackInfo<Value>& args) {
 	
 	double tf = getTime();     // Skaiciavimu pabaigos laikas
 
-	cout << "Geriausias sprendinys:" << endl;
+	//cout << "Geriausias sprendinys:" << endl;
+	//for (int i=0; i<numX; i++) {
+    //  cout << bestX[i] << " (" << demandPoints[bestX[i]][0] << " " << demandPoints[bestX[i]][1] << ")" << endl; 
+   	//}
+	//cout << "Potencialiu klientu skaicius: " << bestU << endl;
+	//cout << "Skaiciavimo trukme: " << tf-ts << " sek." << endl;
+
+	ostringstream os;
+	os << "Geriausias sprendinys:" << endl;
 	for (int i=0; i<numX; i++) {
-      cout << bestX[i] << " (" << demandPoints[bestX[i]][0] << " " << demandPoints[bestX[i]][1] << ")" << endl; 
-   }
-	cout << "Potencialiu klientu skaicius: " << bestU << endl;
-	cout << "Skaiciavimo trukme: " << tf-ts << " sek." << endl;
+      os << bestX[i] << " (" << demandPoints[bestX[i]][0] << " " << demandPoints[bestX[i]][1] << ")" << endl; 
+   	}
+	os << "Potencialiu klientu skaicius: " << bestU << endl;
+	os << "Skaiciavimo trukme: " << tf-ts << " sek." << endl;
+  	string s = os.str();
+
+  	//cout << s << endl;
+
+  	//int avg = tf-ts;
+
+  	Local<String> retval = String::NewFromUtf8(isolate, s.c_str());
+    args.GetReturnValue().Set(retval);
 }
 
 //=============================================================================

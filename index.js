@@ -35,13 +35,8 @@ app.get('/users', function(req, res) {
 });
 
 app.all('/data', function(req, res){
-  exec(runAddon(), function (err, stdout, stderr) {
-    if (!err) {
-      //console.log(stdout);
-      sprendinys = stdout;
-    }
-  });
-  res.json([{'results': sprendinys}])
+    var result = runAddon();
+  response.send(result)
 })
 
 app.listen(app.get('port'), function() {
