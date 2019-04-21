@@ -35,7 +35,7 @@ app.get('/users', function(req, res) {
 });
 
 app.all('/data', function(req, res){
-  exec(runAddon, function (err, stdout, stderr) {
+  exec(runAddon(), function (err, stdout, stderr) {
     if (!err) {
       //console.log(stdout);
       sprendinys = stdout;
