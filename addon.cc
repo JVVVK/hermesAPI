@@ -74,13 +74,20 @@ void flpenum(const FunctionCallbackInfo<Value>& args) {
 	//cout << "Skaiciavimo trukme: " << tf-ts << " sek." << endl;
 
 	ostringstream os;
-	os << "Geriausias sprendinys:" << endl;
+	//os << "Geriausias sprendinys:" << endl;
+	//for (int i=0; i<numX; i++) {
+      //os << bestX[i] << " (" << demandPoints[bestX[i]][0] << " " << demandPoints[bestX[i]][1] << ")" << endl; 
+   //}
+	//os << "Potencialiu klientu skaicius: " << bestU << endl;
+	//os << "Skaiciavimo trukme: " << tf-ts << " sek." << endl;
+	os << "[" ;
 	for (int i=0; i<numX; i++) {
-      os << bestX[i] << " (" << demandPoints[bestX[i]][0] << " " << demandPoints[bestX[i]][1] << ")" << endl; 
+      os << "{\"result_"<< i << "\":\"" << demandPoints[bestX[i]][0] << ", " << demandPoints[bestX[i]][1] << "\"},"; 
    	}
-	os << "Potencialiu klientu skaicius: " << bestU << endl;
-	os << "Skaiciavimo trukme: " << tf-ts << " sek." << endl;
-  	string s = os.str();
+	os << "{\"clients\":\"" << bestU << "\"},";
+	os << "{\"time\":\"" << tf-ts << "\"}]";
+
+  string s = os.str();
 
   	//cout << s << endl;
 
