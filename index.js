@@ -35,9 +35,10 @@ app.get('/users', function(req, res) {
 });
 
 app.all('/data', function(req, res){
-    var result = runAddon();
-  response.send(result)
-})
+  var result = runAddon();
+  console.log(result);
+  res.send(result);
+});
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port')); 
