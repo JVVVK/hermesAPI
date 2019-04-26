@@ -37,7 +37,7 @@ app.get('/users', function(req, res) {
 app.all('/data', function(req, res){
   var result = runAddon();
   console.log(result);
-  res.send(result);
+  res.json(result);
 });
 
 app.listen(app.get('port'), function() {
