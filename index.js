@@ -6,9 +6,8 @@ const addon = require('./build/Release/addon');
 var bodyParser = require('body-parser');
 
 var exec = require("child_process").exec;
-
 const app = express();
-const runAddon = () => addon.flpenum(100, 10, 25, 5);
+const runAddon = function(a, b, c, d) {addon.flpenum(a, b, c, d);}
 
 var sprendinys;
 
@@ -35,7 +34,11 @@ app.get('/users', function(req, res) {
 });
 
 app.all('/data', function(req, res){
-  var result = runAddon();
+  var a = 100;
+  var b = 10;
+  var a = 15;
+  var a = 5;
+  var result = runAddon(a, b, c, d);
   console.log(result);
   res.send(result);
 });
