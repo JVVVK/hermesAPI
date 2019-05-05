@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var exec = require("child_process").exec;
 const app = express();
 
-const runAddon = () => addon.flpenum(100, 10, 25, 5);
+const runAddon = () => addon.flpenum(a, b, c, d);
 
 /*const runAddon = function(a, b, c, d) {
   console.log(a, b, c, d);
@@ -46,7 +46,7 @@ app.all('/data', function(req, res){
   var c = 15;
   var d = 5;
   //var result = runAddon(a, b, c, d);
-  var result = runAddon();
+  var result = runAddon(a, b, c, d);
   console.log(result);
   res.send(result);
 });
