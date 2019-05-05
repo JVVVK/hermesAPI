@@ -36,8 +36,8 @@ app.get('/users', function(req, res) {
 app.all('/data', function(req, res){
   var a = 100;
   var b = 10;
-  var a = 15;
-  var a = 5;
+  var c = 15;
+  var d = 5;
   var result = runAddon(a, b, c, d);
   console.log(result);
   res.send(result);
