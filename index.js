@@ -5,7 +5,7 @@ const addon = require('./build/Release/addon');
 
 var bodyParser = require('body-parser');
 
-var exec = require("child_process").exec;
+//var exec = require("child_process").exec;
 const app = express();
 
 const runAddon = (a, b, c, d) => addon.flpenum(a, b, c, d);
