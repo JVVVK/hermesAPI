@@ -7,7 +7,10 @@ var bodyParser = require('body-parser');
 
 var exec = require("child_process").exec;
 const app = express();
-const runAddon = function(a, b, c, d) {addon.flpenum(a, b, c, d);}
+const runAddon = function(a, b, c, d) {
+  console.log(a, b, c, d);
+  addon.flpenum(a, b, c, d);
+}
 
 var sprendinys;
 
