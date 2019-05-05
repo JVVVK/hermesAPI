@@ -42,10 +42,10 @@ app.get('/users', function(req, res) {
 
 app.all('/data', function(req, res){
   console.log(req.body.apiCall.viet_sk)
-  var a = 1000;
-  var b = 10;
-  var c = 15;
-  var d = 5;
+  var a = req.body.apiCall.viet_sk;
+  var b = req.body.apiCall.e_obj_sk;
+  var c = req.body.apiCall.k_obj_sk;
+  var d = req.body.apiCall.n_obj_sk;
   //var result = runAddon(a, b, c, d);
   var result = runAddon(a, b, c, d);
   console.log(result);
