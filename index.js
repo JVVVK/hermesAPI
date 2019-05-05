@@ -7,11 +7,14 @@ var bodyParser = require('body-parser');
 
 var exec = require("child_process").exec;
 const app = express();
-const runAddon = function() {
+
+const runAddon = () => addon.flpenum(100, 10, 25, 5);
+
+/*const runAddon = function(a, b, c, d) {
   console.log(a, b, c, d);
   console.log(typeof a);
-  addon.flpenum(100, 10, 25, 5);
-}
+  addon.flpenum(a, b, c, d);
+} */
 
 var sprendinys;
 
@@ -42,7 +45,8 @@ app.all('/data', function(req, res){
   var b = 10;
   var c = 15;
   var d = 5;
-  var result = runAddon(a, b, c, d);
+  //var result = runAddon(a, b, c, d);
+  var result = runAddon();
   console.log(result);
   res.send(result);
 });
