@@ -46,7 +46,6 @@ app.all('/data', function(req, res){
   var b = req.body.apiCall.e_obj_sk;
   var c = req.body.apiCall.k_obj_sk;
   var d = req.body.apiCall.n_obj_sk;
-  //var result = runAddon(a, b, c, d);
   var result = runAddon(a, b, c, d);
   console.log(result);
   res.send(result);
