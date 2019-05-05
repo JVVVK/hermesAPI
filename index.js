@@ -41,6 +41,7 @@ app.get('/users', function(req, res) {
 });
 
 app.all('/data', function(req, res){
+  console.log(req);
   var a = 1000;
   var b = 10;
   var c = 15;
