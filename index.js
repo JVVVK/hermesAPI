@@ -16,7 +16,7 @@ const runAddon = (a, b, c, d) => addon.flpenum(a, b, c, d);
   addon.flpenum(a, b, c, d);
 } */
 
-var sprendinys;
+//var sprendinys;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
