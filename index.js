@@ -10,7 +10,7 @@ const app = express();
 const runAddon = function(a, b, c, d) {
   console.log(a, b, c, d);
   console.log(typeof a);
-  addon.flpenum(a, b, c, d);
+  addon.flpenum(100, 10, 25, 5);
 }
 
 var sprendinys;
