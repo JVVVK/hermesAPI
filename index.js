@@ -15,7 +15,7 @@ const app = express();
 var runAddon = function(a, b, c, d) {
   console.log(a, b, c, d);
   console.log(typeof a);
-  x1 = Number.toInteger(a);
+  x1 = parseInt(a);
   console.log(typeof x1);
   addon.flpenum(a, b, c, d);
 }
