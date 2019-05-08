@@ -17,7 +17,7 @@ var a = 100;
 var b = 100;
 var c = 10;
 var d = 15;
-var runAddon = () => addon.flpenum(a, b, c, d);
+var runAddon = (a,b, c, d) => addon.flpenum(a, b, c, d);
 
 /*var runAddon = function(a, b, c, d) {
   console.log(a, b, c, d);
@@ -57,10 +57,10 @@ app.get('/data', function(req, res){
   console.log(req.query.e_obj_sk)
   console.log(req.query.k_obj_sk)
   console.log(req.query.n_obj_sk)
-  var a = req.query.viet_sk;
-  var b = req.query.e_obj_sk;
-  var c = req.query.k_obj_sk;
-  var d = req.query.n_obj_sk;
+  var a1 = req.query.viet_sk;
+  var b1 = req.query.e_obj_sk;
+  var c1 = req.query.k_obj_sk;
+  var d1 = req.query.n_obj_sk;
   x1 = parseInt(a);
   x2 = parseInt(b);
   x3 = parseInt(c);
