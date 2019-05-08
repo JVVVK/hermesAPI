@@ -55,7 +55,8 @@ app.all('/data', function(req, res){
   var d = 15;
   var result = runAddon(a, b, c, d);
   console.log(result);
-  res.send(result);
+  //res.send(result);
+  res.json(result);
 });
 
 app.listen(app.get('port'), function() {
