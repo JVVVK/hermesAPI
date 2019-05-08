@@ -13,9 +13,9 @@ const app = express();
 //var x1, x2, x3, x4;
  //const runAddon = () => addon.flpenum(x1, x2, x3, x4);
 
-var a = 100;
+var a = 10;
 var b = 10;
-var c = 25;
+var c = 5;
 var d = 5;
 var runAddon = (x1, x2, x3, x4) => addon.flpenum(x1, x2, x3, x4);
 
