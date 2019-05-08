@@ -10,18 +10,18 @@ const app = express();
 
 //var runAddon = (a, b, c, d) => addon.flpenum(a, b, c, d);
 
+//var x1, x2, x3, x4;
+var runAddon = (x1, x2, x3, x4) => addon.flpenum(x1, x2, x3, x4);
+
 //const runAddon = () => addon.flpenum(100, 10, 25, 5);
 
-var runAddon = function(a, b, c, d) {
+/*var runAddon = function(a, b, c, d) {
   console.log(a, b, c, d);
   console.log(typeof a);
-  var x1 = parseInt(a);
-  var x2 = parseInt(b);
-  var x3 = parseInt(c);
-  var x4 = parseInt(d);
+  
   console.log(typeof x1);
   addon.flpenum(x1, x2, x3, x4);
-}
+}*/ 
 
 var sprendinys;
 
@@ -57,13 +57,17 @@ app.get('/data', function(req, res){
   var b = req.query.e_obj_sk;
   var c = req.query.k_obj_sk;
   var d = req.query.n_obj_sk;
+  x1 = parseInt(a);
+  x2 = parseInt(b);
+  x3 = parseInt(c);
+  x4 = parseInt(d);
   //var a = 100;
   //var b = 100;
   //var c = 10;
   //var d = 15;
   //var result = (a, b, c, d) => addon.flpenum(a, b, c, d);
-  var result = runAddon(a, b, c, d);
-  //var result = runAddon();
+  //var result = runAddon(a, b, c, d);
+  var result = runAddon();
   console.log(result);
   res.send(result);
   //res.json(result);
