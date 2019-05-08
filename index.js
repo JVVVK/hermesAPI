@@ -11,9 +11,9 @@ const app = express();
 //var runAddon = (a, b, c, d) => addon.flpenum(a, b, c, d);
 
 //var x1, x2, x3, x4;
- const runAddon = () => addon.flpenum(x1, x2, x3, x4);
+ //const runAddon = () => addon.flpenum(x1, x2, x3, x4);
 
-//const runAddon = () => addon.flpenum(100, 10, 25, 5);
+const runAddon = () => addon.flpenum(100, 10, 25, 5);
 
 /*var runAddon = function(a, b, c, d) {
   console.log(a, b, c, d);
