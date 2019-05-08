@@ -15,9 +15,12 @@ const app = express();
 var runAddon = function(a, b, c, d) {
   console.log(a, b, c, d);
   console.log(typeof a);
-  x1 = parseInt(a);
+  var x1 = parseInt(a);
+  var x2 = parseInt(b);
+  var x3 = parseInt(c);
+  var x4 = parseInt(d);
   console.log(typeof x1);
-  addon.flpenum(a, b, c, d);
+  addon.flpenum(x1, x2, x3, x4);
 }
 
 var sprendinys;
