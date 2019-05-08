@@ -40,7 +40,7 @@ app.get('/users', function(req, res) {
   ]);
 });
 
-app.post('/data', function(req, res){
+app.all('/data', function(req, res){
   //console.log(req.body.apiCall.viet_sk)
   //console.log(req.body.apiCall.e_obj_sk)
   //console.log(req.body.apiCall.k_obj_sk)
