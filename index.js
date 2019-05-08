@@ -50,14 +50,14 @@ app.get('/data', function(req, res){
   console.log(req.query.e_obj_sk)
   console.log(req.query.k_obj_sk)
   console.log(req.query.n_obj_sk)
-  //var a = req.body.apiCall.viet_sk;
-  //var b = req.body.apiCall.e_obj_sk;
-  //var c = req.body.apiCall.k_obj_sk;
-  //var d = req.body.apiCall.n_obj_sk;
-  var a = 100;
-  var b = 100;
-  var c = 10;
-  var d = 15;
+  var a = req.query.viet_sk;
+  var b = req.query.e_obj_sk;
+  var c = req.query.k_obj_sk;
+  var d = req.query.n_obj_sk;
+  //var a = 100;
+  //var b = 100;
+  //var c = 10;
+  //var d = 15;
   //var result = (a, b, c, d) => addon.flpenum(a, b, c, d);
   var result = runAddon(a, b, c, d);
   //var result = runAddon();
