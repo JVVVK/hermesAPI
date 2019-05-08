@@ -8,15 +8,15 @@ var bodyParser = require('body-parser');
 //var exec = require("child_process").exec;
 const app = express();
 
-var runAddon = (a, b, c, d) => addon.flpenum(a, b, c, d);
+//var runAddon = (a, b, c, d) => addon.flpenum(a, b, c, d);
 
 //const runAddon = () => addon.flpenum(100, 10, 25, 5);
 
-/*const runAddon = function(a, b, c, d) {
+var runAddon = function(a, b, c, d) {
   console.log(a, b, c, d);
   console.log(typeof a);
   addon.flpenum(a, b, c, d);
-} */
+}
 
 //var sprendinys;
 
