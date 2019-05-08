@@ -5,7 +5,7 @@ const addon = require('./build/Release/addon');
 
 var bodyParser = require('body-parser');
 
-var exec = require("child_process").exec;
+//var exec = require("child_process").exec;
 const app = express();
 
 const runAddon = (a, b, c, d) => addon.flpenum(a, b, c, d);
@@ -42,7 +42,7 @@ app.get('/users', function(req, res) {
   ]);
 });
 
-app.all('/data', function(req, res){
+app.get('/data', function(req, res){
   console.log(req.query);
   //console.log(req.body.apiCall.viet_sk)
   //console.log(req.body.apiCall.e_obj_sk)
@@ -56,7 +56,8 @@ app.all('/data', function(req, res){
   var b = 100;
   var c = 10;
   var d = 15;
-  var result = runAddon(a, b, c, d);
+  var result = () => addon.flpenum(a, b, c, d);
+  //var result = runAddon(a, b, c, d);
   //var result = runAddon();
   console.log(result);
   res.send(result);
