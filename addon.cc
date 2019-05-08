@@ -82,10 +82,10 @@ void flpenum(const FunctionCallbackInfo<Value>& args) {
 	//os << "Skaiciavimo trukme: " << tf-ts << " sek." << endl;
 	os << "{\"sprendinys\": {\"rezultatai\": [" ;
 	for (int i=0; i<numX; i++) {
-      os << "{\"id\": "<< i << "\", \"lat\": " << demandPoints[bestX[i]][0] << ", \"lon\": " << demandPoints[bestX[i]][1] << "},"; 
+      os << "{\"id\": "<< i << ", \"lat\": " << demandPoints[bestX[i]][0] << ", \"lon\": " << demandPoints[bestX[i]][1] << "},"; 
    	}
 	os << "]}, {\"klientai\": " << bestU << "},";
-	os << "{\"skaiciavimo_laikas\": "<< tf-ts << "}}";
+	os << "{\"laikas\": "<< tf-ts << "}}";
 
   string s = os.str();
 
