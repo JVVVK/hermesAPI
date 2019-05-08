@@ -5,7 +5,7 @@ const addon = require('./build/Release/addon');
 
 var bodyParser = require('body-parser');
 
-//var exec = require("child_process").exec;
+var exec = require("child_process").exec;
 const app = express();
 
 //var runAddon = (a, b, c, d) => addon.flpenum(a, b, c, d);
@@ -18,7 +18,7 @@ var runAddon = function(a, b, c, d) {
   addon.flpenum(a, b, c, d);
 }
 
-//var sprendinys;
+var sprendinys;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
