@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 //var exec = require("child_process").exec;
 const app = express();
 
-const runAddon = (a, b, c, d) => addon.flpenum(a, b, c, d);
+var runAddon = (a, b, c, d) => addon.flpenum(a, b, c, d);
 
 //const runAddon = () => addon.flpenum(100, 10, 25, 5);
 
@@ -44,10 +44,10 @@ app.get('/users', function(req, res) {
 
 app.get('/data', function(req, res){
   console.log(req.query);
-  //console.log(req.body.apiCall.viet_sk)
-  //console.log(req.body.apiCall.e_obj_sk)
-  //console.log(req.body.apiCall.k_obj_sk)
-  //console.log(req.body.apiCall.n_obj_sk)
+  console.log(req.query.viet_sk)
+  console.log(req.query.e_obj_sk)
+  console.log(req.query.k_obj_sk)
+  console.log(req.query.n_obj_sk)
   //var a = req.body.apiCall.viet_sk;
   //var b = req.body.apiCall.e_obj_sk;
   //var c = req.body.apiCall.k_obj_sk;
