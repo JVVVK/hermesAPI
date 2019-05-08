@@ -85,8 +85,8 @@ void flpenum(const FunctionCallbackInfo<Value>& args) {
       os << "{\"id\": "<< i << ", \"lat\": " << demandPoints[bestX[i]][0] << ", \"lon\": " << demandPoints[bestX[i]][1] << "},"; 
    	}
 	os.seekp(-1, os.cur);
-	os << "]}, {\"klientai\": " << bestU << "},";
-	os << "{\"laikas\": "<< tf-ts << "}}";
+	os << "], \"klientai\": " << bestU << ",";
+	os << " \"laikas\": "<< tf-ts << "}}";
 
   string s = os.str();
 
