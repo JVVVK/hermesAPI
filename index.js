@@ -13,10 +13,10 @@ const app = express();
 //var x1, x2, x3, x4;
  //const runAddon = () => addon.flpenum(x1, x2, x3, x4);
 
-var a = 10;
-var b = 10;
-var c = 5;
-var d = 5;
+//var a = 10;
+//var b = 10;
+//var c = 5;
+//var d = 5;
 var runAddon = (x1, x2, x3, x4) => addon.flpenum(x1, x2, x3, x4);
 
 /*var runAddon = function(a, b, c, d) {
@@ -53,14 +53,14 @@ app.get('/users', function(req, res) {
 
 app.get('/data', function(req, res){
   console.log(req.query);
-  console.log(req.query.viet_sk)
-  console.log(req.query.e_obj_sk)
-  console.log(req.query.k_obj_sk)
-  console.log(req.query.n_obj_sk)
-  //var a = req.query.viet_sk;
- // var b = req.query.e_obj_sk;
-  //var c = req.query.k_obj_sk;
- // var d = req.query.n_obj_sk;
+  //console.log(req.query.viet_sk)
+  //console.log(req.query.e_obj_sk)
+  //console.log(req.query.k_obj_sk)
+  //console.log(req.query.n_obj_sk)
+  var a = req.query.viet_sk;
+  var b = req.query.e_obj_sk;
+  var c = req.query.k_obj_sk;
+  var d = req.query.n_obj_sk;
   //x1 = parseInt(a);
  // x2 = parseInt(b);
   //x3 = parseInt(c);
