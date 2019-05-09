@@ -82,7 +82,7 @@ void flpenum(const FunctionCallbackInfo<Value>& args) {
 	//os << "Skaiciavimo trukme: " << tf-ts << " sek." << endl;
 	os << "{\"id\":\"sprendinys\",\"type\":\"symbol\",\"source\":{\"type\":\"geojson\",\"data\":{\"type\":\"FeatureCollection\",\"features\":[";
 	for (int i=0; i<numX; i++) {
-      os << "{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[" << demandPoints[bestX[i]][0] << "," << demandPoints[bestX[i]][1] << "]},\"properties\":{\"icon\":\"marker\" }},"; 
+      os << "{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[" << demandPoints[bestX[i]][1] << "," << demandPoints[bestX[i]][0] << "]},\"properties\":{\"icon\":\"marker\" }},"; 
    	}
 	os.seekp(-1, os.cur);
 	os <<"]}},\"layout\":{\"icon-image\":\"{icon}-15\"},";
