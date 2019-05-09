@@ -80,13 +80,14 @@ void flpenum(const FunctionCallbackInfo<Value>& args) {
    //}
 	//os << "Potencialiu klientu skaicius: " << bestU << endl;
 	//os << "Skaiciavimo trukme: " << tf-ts << " sek." << endl;
-	os << "{\"sprendinys\": {\"rezultatai\": [" ;
+	os << "{\"id\":\"sprendinys\",\"type\":\"symbol\",\"source\":{\"type\":\"geojson\",\"data\":{\"type\":\"FeatureCollection\",\"features\":[";
 	for (int i=0; i<numX; i++) {
-      os << "{\"id\": "<< i << ", \"lat\": " << demandPoints[bestX[i]][0] << ", \"lon\": " << demandPoints[bestX[i]][1] << "},"; 
+      os << "{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[" << demandPoints[bestX[i]][0] << "," << demandPoints[bestX[i]][1] << "]},\"properties\":{\"icon\":\"marker\" }},"; 
    	}
 	os.seekp(-1, os.cur);
-	os << "], \"klientai\": " << bestU << ",";
-	os << " \"laikas\": "<< tf-ts << "}}";
+	os <<"]}},\"layout\":{\"icon-image\":\"{icon}-15\"},";
+	os << "\"klientai\":" << bestU << ",";
+	os << "\"laikas\":"<< tf-ts << "}}";
 
   string s = os.str();
 
