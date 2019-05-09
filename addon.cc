@@ -87,7 +87,7 @@ void flpenum(const FunctionCallbackInfo<Value>& args) {
 	os.seekp(-1, os.cur);
 	os <<"]}},\"layout\":{\"icon-image\":\"{icon}-15\"},";
 	os << "\"klientai\":" << bestU << ",";
-	os << "\"laikas\":"<< tf-ts << "}}";
+	os << "\"laikas\":"<< tf-ts << "}";
 
   string s = os.str();
 
