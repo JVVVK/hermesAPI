@@ -51,8 +51,8 @@ app.get('/users', function(req, res) {
   ]);
 });
 
-app.get('/data', function(req, res){
-//app.get('/data', async(req, res)=>{
+//app.get('/data', function(req, res){
+app.get('/data', async(req, res)=>{
   console.log(req.query);
   //console.log(req.query.viet_sk)
   //console.log(req.query.e_obj_sk)
@@ -71,9 +71,9 @@ app.get('/data', function(req, res){
   //var c = 10;
   //var d = 15;
   //var result = (a, b, c, d) => addon.flpenum(a, b, c, d);
-  //const result = await runAddon(a, b, c, d);
+  var result = await runAddon(a, b, c, d);
   //var result = runAddon();
-  var result = runAddon(a, b, c, d);
+  //var result = runAddon(a, b, c, d);
   console.log(result);
   res.send(result);
   //res.json(result);
