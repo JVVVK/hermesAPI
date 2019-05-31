@@ -73,7 +73,7 @@ app.get('/data', function(req, res){
   //var result = (a, b, c, d) => addon.flpenum(a, b, c, d);
   //let result = await runAddon(a, b, c, d);
   //var result = runAddon();
-  var result = runAddon(a, b, c, d);
+  const result = runAddon(a, b, c, d);
   console.log(result);
   res.send(result);
   //res.json(result);
