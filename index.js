@@ -38,6 +38,7 @@ app.get('/data', function(req, res){
   var b = req.query.e_obj_sk;
   var c = req.query.k_obj_sk;
   var d = req.query.n_obj_sk;
+  res.send("Please wait...");
   const result = runAddon(a, b, c, d);
   console.log(result);
   res.send(result);
