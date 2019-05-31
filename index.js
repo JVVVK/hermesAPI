@@ -8,26 +8,7 @@ var bodyParser = require('body-parser');
 var exec = require("child_process").exec;
 const app = express();
 
-//var runAddon = (a, b, c, d) => addon.flpenum(a, b, c, d);
-
-//var x1, x2, x3, x4;
- //const runAddon = () => addon.flpenum(x1, x2, x3, x4);
-
-//var a = 10;
-//var b = 10;
-//var c = 5;
-//var d = 5;
 var runAddon = (x1, x2, x3, x4) => addon.flpenum(x1, x2, x3, x4);
-
-/*var runAddon = function(a, b, c, d) {
-  console.log(a, b, c, d);
-  console.log(typeof a);
-  
-  console.log(typeof x1);
-  addon.flpenum(x1, x2, x3, x4);
-}*/ 
-
-var sprendinys;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -52,7 +33,6 @@ app.get('/users', function(req, res) {
 });
 
 app.get('/data', function(req, res){
-  setTimeout(() => {
   console.log(req.query);
   var a = req.query.viet_sk;
   var b = req.query.e_obj_sk;
@@ -61,7 +41,6 @@ app.get('/data', function(req, res){
   const result = runAddon(a, b, c, d);
   console.log(result);
   res.send(result);
-  }, 18000)
 });
 
 app.listen(app.get('port'), function() {
