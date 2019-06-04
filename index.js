@@ -33,7 +33,7 @@ app.get('/users', function(req, res) {
 });
 
 app.get('/data', function(req, res){
-  req.setTimeout(0) // no timeout
+  req.setTimeout(0); // no timeout
   console.log(req.query);
   var a = req.query.viet_sk;
   var b = req.query.e_obj_sk;
