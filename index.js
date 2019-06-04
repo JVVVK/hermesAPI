@@ -1,5 +1,6 @@
 var express =  require('express');
 var cors = require('cors');
+var DelayedResponse = require('http-delayed-response');
 
 const addon = require('./build/Release/addon');
 
@@ -13,6 +14,7 @@ var runAddon = (x1, x2, x3, x4) => addon.flpenum(x1, x2, x3, x4);
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(http-delayed-response());
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -32,7 +34,7 @@ app.get('/users', function(req, res) {
   ]);
 });
 
-app.get('/data', function(req, res){
+app.use('/data', function(req, res){
   var delayed = new DelayedResponse(req, res);
   delayed.wait();
   console.log(req.query);
