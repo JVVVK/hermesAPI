@@ -1,6 +1,5 @@
 var express =  require('express');
 var cors = require('cors');
-var DelayedResponse = require('http-delayed-response');
 
 const addon = require('./build/Release/addon');
 
@@ -34,15 +33,12 @@ app.get('/users', function(req, res) {
 });
 
 app.use('/data', function(req, res){
-  var delayed = new DelayedResponse(req, res);
-  delayed.wait();
   console.log(req.query);
   var a = req.query.viet_sk;
   var b = req.query.e_obj_sk;
   var c = req.query.k_obj_sk;
   var d = req.query.n_obj_sk;
   var result = runAddon(a, b, c, d);
-  delayed.end(result);
   console.log(result);
   res.send(result);
 });
